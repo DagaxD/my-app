@@ -46,12 +46,23 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         padding: 2px;
         font-size: 15px;
         background-color:white;
-        margin:10px;
+        margin:5px;
         border:0px;
         
     }
+    .edit-button{
+      color: #223df6;
+      padding: 2px;
+      font-size: 15px;
+      background-color:white;
+      margin:5px;
+      border:0px;
+    }
 
     .delete-button.style-scope.lista-zakupow:hover{
+      cursor:pointer;
+    }
+    .edit-button:hover{
       cursor:pointer;
     }
     </style>
