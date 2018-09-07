@@ -40,6 +40,20 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         color: #212121;
         font-size: 22px;
       }
+
+      .delete-button.style-scope.lista-zakupow{
+        color: #f64f4f;
+        padding: 2px;
+        font-size: 15px;
+        background-color:white;
+        margin:10px;
+        border:0px;
+        
+    }
+
+    .delete-button.style-scope.lista-zakupow:hover{
+      cursor:pointer;
+    }
     </style>
   </template>
 </dom-module>`;
