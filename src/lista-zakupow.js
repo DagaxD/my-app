@@ -1,8 +1,9 @@
 /* Load the PolymerElement base class and html helper function */
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import '@polymer/paper-checkbox/paper-checkbox.js';
 /* Load shared styles. All view elements use these styles */
 import './shared-styles.js';
-import '@polymer/paper-checkbox/paper-checkbox.js';
+
 /* Extend the base PolymerElement class */
 class MyNewView extends PolymerElement {
   /* Define a template for the new element */
@@ -21,6 +22,7 @@ class MyNewView extends PolymerElement {
         <div class="circle"><i class="fas fa-shopping-basket"></i></div>
         <h1>Lista zakupów</h1>
         <p>Tu edytujesz swoją listę zakupów</p>
+        <paper-checkbox>Rzecz do kupienia</paper-checkbox>
 
       </div>
     `;
