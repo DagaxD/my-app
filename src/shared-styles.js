@@ -65,6 +65,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     .edit-button:hover{
       cursor:pointer;
     }
+  
     </style>
   </template>
 </dom-module>`;

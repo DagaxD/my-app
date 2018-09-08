@@ -1,4 +1,5 @@
 /* Load the PolymerElement base class and html helper function */
+import 'fontawesome-icon';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 /* Load shared styles. All view elements use these styles */
 import './shared-styles.js';
@@ -8,7 +9,7 @@ class MyNewView extends PolymerElement {
   /* Define a template for the new element */
   static get template() {
     return html`
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
       <style include="shared-styles">
         :host {
           display: block;
@@ -18,7 +19,7 @@ class MyNewView extends PolymerElement {
       </style>
 
       <div class="card">
-        <div class="circle"><i class="fas fa-hands-helping"></i></div>
+        <div class="circle"><fontawesome-icon prefix="fas" name="hands-helping" fixed-width></fontawesome-icon></div>
         <h1>Pomoc</h1>
         <p>Jak możemy Ci dziś pomóc?</p>
       </div>

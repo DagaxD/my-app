@@ -1,9 +1,12 @@
 /* Load the PolymerElement base class and html helper function */
+import 'fontawesome-icon';
+
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/paper-checkbox/paper-checkbox.js';
 import '@polymer/iron-form/iron-form.js';
 import '@polymer/paper-input/paper-input.js';
 import '@polymer/paper-button/paper-button.js';
+
 /* Load shared styles. All view elements use these styles */
 import './shared-styles.js';
 
@@ -12,8 +15,9 @@ class ListaZakupow extends PolymerElement {
   /* Define a template for the new element */
   static get template() {
     return html`
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-      <style include="shared-styles">
+  
+    
+    <style include="shared-styles">
         :host {
           display: block;
 
@@ -22,15 +26,15 @@ class ListaZakupow extends PolymerElement {
       </style>
 
       <div class="card">
-        <div class="circle"><i class="fas fa-shopping-basket"></i></div>
+        <div class="circle"><fontawesome-icon prefix="fas" name="shopping-basket" fixed-width></fontawesome-icon></div>
         <h1>Lista zakupów</h1>
         <p>Dodaj produkty do listy, by nie zapomnieć o nich podczas zakupów.</p>
        
 
         <template is="dom-repeat" items="{{elements}}"> <paper-checkbox>{{item}}</paper-checkbox>
-        <button class="edit-button" raised on-click="edit"><i class="fas fa-pencil-alt"></i></button>
-        <button class="delete-button" raised on-click="delete" data-index='{{index}}'><i class="fas fa-trash-alt"></i></button>
-       
+        <button class="edit-button" raised on-click="edit"><fontawesome-icon prefix="fas" name="pencil-alt" fixed-width></fontawesome-icon></button>
+        <button class="delete-button" raised on-click="delete" data-index='{{index}}'><fontawesome-icon prefix="fas" name="trash-alt" fixed-width></fontawesome-icon></button>
+
         </br></template>
 
 
@@ -51,7 +55,7 @@ class ListaZakupow extends PolymerElement {
         </form>
         <div class="output"></div>
       </iron-form>
-     
+
       
       </div>
     `;
