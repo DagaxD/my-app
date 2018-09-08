@@ -38,10 +38,16 @@ class pogoda extends PolymerElement {
        
       
         [[text]]</br>
-Temperatura: [[temperature]] *C </br>
+Temperatura: [[temperature]]°C </br>
 [[date]]</br>
 
+          <template is="dom-if" if="[[isBadWeather]]">
+          <div class=frame-dont-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="times" fixed-width></button></fontawesome-icon>Lepiej zostań w domu</div>
+            </template>
 
+            <template is="dom-if" if="{{!isBadWeather}}">
+            <div class=frame-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="check" fixed-width></fontawesome-icon></button>Możesz iść na zakupy</div>
+            </template> 
       </div>
     `;
   }
@@ -55,23 +61,16 @@ Temperatura: [[temperature]] *C </br>
     console.log(data, temperature,text, date);
     this.set('temperature',temperature);
     this.set('text',text);
-  
-    this.set('date',date);
+    this.set('date',date);  
+    var IsBadWeather= this.text.includes("Rain");
+    var IsBadWeather= this.text.includes("Thunder");
+    var IsBadWeather= this.text.includes("Showers");
+  this.set('isBadWeather',IsBadWeather);
   }
 
   ready(){
     super.ready();
-    // let request = ironAjaxElement.generateRequest();
-    // request.completes.then(function(req) {
-    //     // succesful request, argument is iron-request element
-    //   }, function(rejected) {
-    //     // failed request, argument is an object
-    //     let req = rejected.request;
-    //     let error = rejected.error;
-    //   }
-    // )
   }
-  
 
 }
 

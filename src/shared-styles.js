@@ -58,6 +58,13 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       margin:5px;
       border:0px;
     }
+    .weaterbutton{
+      padding: 2px;
+      font-size: 20px;
+      background-color:white;
+      margin:5px;
+      border:0px;
+    }
 
     .delete-button.style-scope.lista-zakupow:hover{
       cursor:pointer;
@@ -65,7 +72,16 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     .edit-button:hover{
       cursor:pointer;
     }
-  
+  .frame-go{
+    margin:10px;
+    color:blue;
+    font-size:20px;
+  }
+  .frame-dont-go{
+    margin:10px;
+    color:red;
+    font-size:20px;
+  }
     </style>
   </template>
 </dom-module>`;
