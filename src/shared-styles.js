@@ -89,6 +89,14 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     color:red;
     font-size:20px;
   }
+
+  paper-spinner.multi {
+    --paper-spinner-layer-1-color: var(--paper-purple-500);
+    --paper-spinner-layer-2-color: var(--paper-cyan-500);
+    --paper-spinner-layer-3-color: var(--paper-blue-grey-500);
+    --paper-spinner-layer-4-color: var(--paper-amber-500);
+  }
+
     </style>
   </template>
 </dom-module>`;

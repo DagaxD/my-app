@@ -10,6 +10,7 @@
 import 'fontawesome-icon';
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/iron-ajax/iron-ajax.js';
+import '@polymer/paper-spinner/paper-spinner.js';
 
 import './shared-styles.js';
 
@@ -36,6 +37,11 @@ class pogoda extends PolymerElement {
         <h1>Pogoda w Szczecinie</h1>
         <p>Sprawdź pogodę w Szczecinie.</p>
        
+        <template is="dom-if" if="[[weatherIsLoading]]">
+    <paper-spinner class="multi" active></paper-spinner>
+      </template>
+      <template is="dom-if" if="[[!weatherIsLoading]]">
+    
       <div class=weather>
         [[text]]</br>
 Temperatura: [[temperature]]°C </br>
@@ -48,6 +54,7 @@ Temperatura: [[temperature]]°C </br>
             <template is="dom-if" if="{{!isBadWeather}}">
             <div class=frame-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="check" fixed-width></fontawesome-icon></button>Możesz iść na zakupy</div>
             </template> 
+            </template>
       </div>
     `;
   }
@@ -62,14 +69,14 @@ Temperatura: [[temperature]]°C </br>
     this.set('temperature',temperature);
     this.set('text',text);
     this.set('date',date);  
-    var IsBadWeather= this.text.includes("Rain");
-    var IsBadWeather= this.text.includes("Thunder");
-    var IsBadWeather= this.text.includes("Showers");
-  this.set('isBadWeather',IsBadWeather);
+    var isBadWeather= this.text.includes("Rain") || this.text.includes("Thunder") || this.text.includes("Showers");
+    this.set('isBadWeather',isBadWeather);
+    this.set('weatherIsLoading',false);
   }
 
   ready(){
     super.ready();
+    this.set('weatherIsLoading',true);
   }
 
 }
