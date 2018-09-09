@@ -65,6 +65,13 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       margin:5px;
       border:0px;
     }
+    .weather{
+      border:2px solid black;
+      padding: 20px;
+      font-size: 20px;
+      background-color:white;
+      margin:5px;
+    }
 
     .delete-button.style-scope.lista-zakupow:hover{
       cursor:pointer;

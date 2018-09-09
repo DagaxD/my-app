@@ -33,14 +33,14 @@ class pogoda extends PolymerElement {
 
       <div class="card">
         <div class="circle"><fontawesome-icon prefix="fas" name="sun" fixed-width></fontawesome-icon></div>
-        <h1>Pogoda</h1>
-        <p>Sprawdź pogodę w swoim mieście zanim wyjdziesz na zakupy.</p>
+        <h1>Pogoda w Szczecinie</h1>
+        <p>Sprawdź pogodę w Szczecinie.</p>
        
-      
+      <div class=weather>
         [[text]]</br>
 Temperatura: [[temperature]]°C </br>
 [[date]]</br>
-
+</div>
           <template is="dom-if" if="[[isBadWeather]]">
           <div class=frame-dont-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="times" fixed-width></button></fontawesome-icon>Lepiej zostań w domu</div>
             </template>

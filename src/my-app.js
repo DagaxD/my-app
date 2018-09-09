@@ -84,8 +84,8 @@ class MyApp extends PolymerElement {
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
           <app-toolbar>Menu</app-toolbar>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-            <a name="pogoda" href="[[rootPath]]pogoda">Pogoda</a>
-            <a name="view2" href="[[rootPath]]view2">View Two</a>
+            <a name="pogoda" href="[[rootPath]]pogoda">Pogoda w Szczecinie</a>
+            <a name="pogoda-user" href="[[rootPath]]pogoda-user">Twoja pogoda</a>
             <a name="view3" href="[[rootPath]]view3">View Three</a>
             <a name="lista-zakupow" href="[[rootPath]]lista-zakupow">Lista zakupów</a>
             <a name="pomoc" href="[[rootPath]]pomoc">Pomoc</a>
@@ -104,7 +104,7 @@ class MyApp extends PolymerElement {
 
           <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
             <pogoda-view name="pogoda"></pogoda-view>
-            <my-view2 name="view2"></my-view2>
+            <pogoda-user name="pogoda-user"></pogoda-user>
             <my-view3 name="view3"></my-view3>
             <lista-zakupow name="lista-zakupow"></lista-zakupow>
             <pomoc-view name="pomoc"></pomoc-view>
@@ -140,7 +140,7 @@ class MyApp extends PolymerElement {
      // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
     if (!page) {
       this.page = 'pogoda';
-    } else if (['pogoda', 'view2', 'view3', 'lista-zakupow', 'pomoc'].indexOf(page) !== -1) {
+    } else if (['pogoda', 'pogoda-user', 'view3', 'lista-zakupow', 'pomoc'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'view404';
@@ -161,8 +161,8 @@ class MyApp extends PolymerElement {
       case 'pogoda':
         import('./pogoda-view.js');
         break;
-      case 'view2':
-        import('./my-view2.js');
+      case 'pogoda-user':
+        import('./pogoda-user.js');
         break;
       case 'view3':
         import('./my-view3.js');
