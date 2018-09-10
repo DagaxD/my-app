@@ -86,7 +86,6 @@ class MyApp extends PolymerElement {
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
             <a name="pogoda" href="[[rootPath]]pogoda">Pogoda w Szczecinie</a>
             <a name="pogoda-user" href="[[rootPath]]pogoda-user">Twoja pogoda</a>
-            <a name="view3" href="[[rootPath]]view3">View Three</a>
             <a name="lista-zakupow" href="[[rootPath]]lista-zakupow">Lista zakupów</a>
             <a name="pomoc" href="[[rootPath]]pomoc">Pomoc</a>
           </iron-selector>
@@ -98,14 +97,13 @@ class MyApp extends PolymerElement {
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
               <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
-              <div main-title="">My App</div>
+              <div main-title="">Zakupowy pomocnik</div>
             </app-toolbar>
           </app-header>
 
           <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
             <pogoda-view name="pogoda"></pogoda-view>
             <pogoda-user name="pogoda-user"></pogoda-user>
-            <my-view3 name="view3"></my-view3>
             <lista-zakupow name="lista-zakupow"></lista-zakupow>
             <pomoc-view name="pomoc"></pomoc-view>
             <my-view404 name="view404"></my-view404>
@@ -138,6 +136,7 @@ class MyApp extends PolymerElement {
      //
      // If no page was found in the route data, page will be an empty string.
      // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
+     //console.log("routepagechanged",page);
     if (!page) {
       this.page = 'pogoda';
     } else if (['pogoda', 'pogoda-user', 'view3', 'lista-zakupow', 'pomoc'].indexOf(page) !== -1) {
@@ -157,15 +156,13 @@ class MyApp extends PolymerElement {
     //
     // Note: `polymer build` doesn't like string concatenation in the import
     // statement, so break it up.
+   // console.log("pagechanged",page);
     switch (page) {
       case 'pogoda':
         import('./pogoda-view.js');
         break;
       case 'pogoda-user':
         import('./pogoda-user.js');
-        break;
-      case 'view3':
-        import('./my-view3.js');
         break;
       case 'lista-zakupow':
         import('./lista-zakupow.js');

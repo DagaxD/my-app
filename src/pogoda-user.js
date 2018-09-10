@@ -12,6 +12,7 @@ import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
 import '@polymer/iron-ajax/iron-ajax.js';
 import './shared-styles.js';
 import '@polymer/paper-spinner/paper-spinner.js';
+import './text-mapping.js'
 
 class PogodaUser extends PolymerElement {
   static get template() {
@@ -43,9 +44,11 @@ debounce-duration="300"></iron-ajax>
       <template is="dom-if" if="[[!isLoading]]">
     
   <div class=weather>
+  <template is="dom-if" if="[[cloudy]]">
+  jjjj
+    </template>
     [[text]]</br>
 Temperatura: [[temperature]]°C </br>
-[[date]]</br>
 </div>
       <template is="dom-if" if="[[isBadWeather]]">
       <div class=frame-dont-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="times" fixed-width></button></fontawesome-icon>Lepiej zostań w domu</div>
@@ -67,10 +70,10 @@ Temperatura: [[temperature]]°C </br>
       let date = data.query.results.channel.item.condition.date;
       console.log(data, temperature,text, date);
       this.set('temperature',temperature);
-      this.set('text',text);
       this.set('date',date);  
-      var isBadWeather= this.text.includes("Rain") || this.text.includes("Thunder") || this.text.includes("Showers");
-    this.set('isBadWeather',isBadWeather);
+      var isBadWeather = text.includes("Rain") || text.includes("Thunder") || text.includes("Showers");
+      this.set('isBadWeather',isBadWeather);
+      this.set('text',translateDescription(text));
     }
   
     ready(){

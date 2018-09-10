@@ -17,7 +17,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       .card {
         margin: 24px;
         padding: 16px;
-        color: #757575;
+        color: #000;
         border-radius: 5px;
         background-color: #fff;
         box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -41,11 +41,11 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         font-size: 22px;
       }
 
-      .delete-button.style-scope.lista-zakupow{
+      .delete-button{
         color: #f64f4f;
         padding: 2px;
         font-size: 15px;
-        background-color:white;
+        background-color:#00000000;
         margin:5px;
         border:0px;
         
@@ -54,7 +54,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       color: #223df6;
       padding: 2px;
       font-size: 15px;
-      background-color:white;
+      background-color:#00000000;
       margin:5px;
       border:0px;
     }
@@ -62,18 +62,38 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       padding: 2px;
       font-size: 20px;
       background-color:white;
+      border-radius: 11px 11px 11px 11px;
       margin:5px;
       border:0px;
+      opacity:0.3;
     }
     .weather{
-      border:2px solid black;
+      
       padding: 20px;
       font-size: 20px;
-      background-color:white;
+      background-color:#bedeff;
       margin:5px;
+      width:200px;
+      border-radius: 11px 11px 11px 11px;
+      box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+    }
+    .helpchosen{
+      font-size:20px;
+      border-bottom:1px solid black;
+    }
+    .paperitem:hover{
+      cursor:pointer;
+    }
+    .paperlistbox{
+      border:1px dotted black;
     }
 
-    .delete-button.style-scope.lista-zakupow:hover{
+    .weather:hover{
+      background-color:#F0F0FF;
+      transform: scale(1.1);
+      background:back pulse;}
+
+    .delete-button:hover{
       cursor:pointer;
     }
     .edit-button:hover{
@@ -97,6 +117,23 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     --paper-spinner-layer-4-color: var(--paper-amber-500);
   }
 
+  .inputbox{
+    margin:30px 0px 10px 0px; 
+    width:400px;
+    border:0px;
+    border-bottom: 1px solid black;
+  }
+  .inputbox:active{
+    box-shadow: 0px 6px 5px -3px rgba(30,54,189,1);
+  }
+  
+  .shoppinglist{
+    background-color:#f5f13a80;
+    padding:10px;
+    width:400px;
+    box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+    
+  }
     </style>
   </template>
 </dom-module>`;
