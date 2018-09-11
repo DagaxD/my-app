@@ -192,13 +192,14 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
 
 .flip-box {
   background-color: transparent;
-  width: 1155px;
+ 
   height: 200px;
   border: 1px solid #f1f1f1;
   perspective: 1000px;
   border-radius: 11px 11px 11px 11px;
   box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
   margin-top:20px;
+  display: flex;
 }
 
 .flip-box-inner {
@@ -209,7 +210,8 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
   transition: transform 0.8s;
   transform-style: preserve-3d;
   border-radius: 11px 11px 11px 11px;
-      box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+  box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+  display: flex;
 }
 
 .flip-box:hover .flip-box-inner {
@@ -222,13 +224,15 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
   height: 100%;
   backface-visibility: hidden;
   border-radius: 11px 11px 11px 11px;
-      box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+  box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+      
 }
 
 .flip-box-front {
   background-color: #1786e7;
   color: black;
   font-size:20px;
+  
 }
 
 .flip-box-back {
@@ -236,6 +240,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
   color: white;
   transform: rotateX(180deg);
   font-size:20px;
+  
 }
 
 
