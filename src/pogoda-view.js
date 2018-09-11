@@ -75,14 +75,71 @@ Temperatura: [[temperature]]°C </br>
     var isBadWeather= text.includes("Rain") || text.includes("Thunder") || text.includes("Showers") || text.includes("Hurricane") || text.includes("Storm") || text.includes("Snow") || text.includes("Hail") || text.includes("Sleet");
     this.set('isBadWeather',isBadWeather);
     this.set('weatherIsLoading',false);  
-    this.set('text',translateDescription(text));
+    this.set('text',this.translateDescription(text));
   }
 
   ready(){
     super.ready();
     this.set('weatherIsLoading',true);
   }
-
+  
+  translateDescription(description){
+    var map = {
+      "Showers"                 :"Deszczowo",
+      "Partly Cloudy"           :"Częściowe zachmurzenie",
+      "Scattered Thunderstorms" :"Przelotna burza z piorunami",
+      "Light Rain with Thunder" :"Lekki deszcz z piorunem",
+      "Thunderstorms"           :"Burza",
+      "Heavy Rain"              :"Duże opady deszczu",
+      "Mostly Sunny"            :"Dość słonecznie",
+      "Light Rain"              :"Lekki deszcz",
+      "Foggy"                   :"Mgliście",
+      "Fair"                    :"Ładnie",
+      "Sunny"                   :"Słonecznie",
+      "Mostly Cloudy"           :"Mocne zachmurzenie",
+      "Isolated Thunderstorms"  :"Pojedyncze burze z piorunami",
+      "Thundershowers"          :"Deszcze z piorunami",
+      "Heavy Thunderstorms"     :"Burza z piorunami",
+      "Clear"                   :"Czysto",
+      "Rain"                    :"Deszcz",
+      "Cloudy"                  :"Pochmurnie",  
+      "Tropical Storm"          :"Burza Tropikalna",
+      "Hurricane"               :"Huragan",
+      "Severe Thunderstorms"    :"Poważne burze z piorunami",
+       "Mixed Rain And Snow"     :"Mieszany deszcz i śnieg",
+       "Mixed Rain And Sleet"    :"Mieszany deszcz ze śniegiem",
+       "Mixed Snow And Sleet"    :"Mieszany śnieg z deszczem",
+       "Freezing Drizzle"        :"Zamarzająca mżawka",
+       "Drizzle"                 :"Mżawka",
+       "Freezing Rain"           :"Zamarzający deszcz",
+       "Snow Flurries"           :"Podmuchy śniegu",
+       "Light Snow Showers"      :"Lekkie opady śniegu",
+      "Blowing Snow"            :"Podmuchy śniegu",
+      "Snow"                    :"Śnieg",
+       "Hail"                    :"Grad",
+       "Sleet"                   :"Śnieg z deszczem",
+       "Dust"                    :"Pył",
+       "Haze"                    :"Mgła",
+       "Smoky"                   :"Zadymione",
+       "Blustery"                :"Wietrznie",
+       "Windy"                   :"Wietrznie",
+       "Cold"                    :"Zimno",
+       "Mixed Rain And Hail"     :"Mieszany deszcz z gradem",
+       "Hot"                     :"Gorąco",
+       "Scattered Showers"       :"Przelotne opady",
+       "Heavy snow"              :"Duże opady śniegu",
+       "Scattered snow showers"  :"Przelotne opady śniegu",
+      "Snow Showers"            :"Opady śniegu",
+       "Isolated Thundershowers" :"Pojedyncze burze",
+    };
+  
+    if(map[description]) {
+      return map[description];
+    }
+  
+    console.warn("nie znaleziono tlumaczenia");
+    return description;
+  }
 }
 
 window.customElements.define('pogoda-view', pogoda);
