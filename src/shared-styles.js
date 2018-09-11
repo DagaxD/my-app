@@ -77,10 +77,25 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       border-radius: 11px 11px 11px 11px;
       box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
     }
+
     .helpchosen{
-      font-size:20px;
-      border-bottom:1px solid black;
+     position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%); 
+    padding:20px;
     }
+
+    .helpchosenicon{
+      position: absolute;
+     top: 20%;
+     left: 50%;
+     margin-right: -50%;
+     transform: translate(-50%, -50%); 
+     font-size:60px;
+     }
+
     .paperitem:hover{
       cursor:pointer;
     }
@@ -134,6 +149,96 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
     box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
     
   }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 400px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    position: absolute;
+    z-index: 1;
+    bottom: 80%;
+    left: 50%;
+    margin-left: -60px;
+
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 1155px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px;
+  border-radius: 11px 11px 11px 11px;
+  box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+  margin-top:20px;
+}
+
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: 11px 11px 11px 11px;
+      box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 11px 11px 11px 11px;
+      box-shadow: 7px 6px 20px -3px rgba(0,0,0,0.67);
+}
+
+.flip-box-front {
+  background-color: #1786e7;
+  color: black;
+  font-size:20px;
+}
+
+.flip-box-back {
+  background: dodgerblue;
+  color: white;
+  transform: rotateX(180deg);
+  font-size:20px;
+}
+
+
     </style>
   </template>
 </dom-module>`;

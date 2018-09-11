@@ -55,7 +55,9 @@ Temperatura: [[temperature]]°C </br>
         </template>
 
         <template is="dom-if" if="{{!isBadWeather}}">
-        <div class=frame-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="check" fixed-width></fontawesome-icon></button>Możesz iść na zakupy</div>
+        <div class="tooltip">
+        <span class="tooltiptext">Pod warunkiem, że sklepy są jeszcze otwarte.</span> <div class=frame-go><button class=weaterbutton><fontawesome-icon prefix="fas" name="check" fixed-width></fontawesome-icon></button>Możesz iść na zakupy</div>
+        </div>
         </template> 
         </template>
   </div>
@@ -71,7 +73,7 @@ Temperatura: [[temperature]]°C </br>
       console.log(data, temperature,text, date);
       this.set('temperature',temperature);
       this.set('date',date);  
-      var isBadWeather = text.includes("Rain") || text.includes("Thunder") || text.includes("Showers");
+      var isBadWeather = text.includes("Rain") || text.includes("Thunder") || text.includes("Showers") || text.includes("Hurricane") || text.includes("Storm") || text.includes("Snow") || text.includes("Hail") || text.includes("Sleet");
       this.set('isBadWeather',isBadWeather);
       this.set('text',translateDescription(text));
     }
